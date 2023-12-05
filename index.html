@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Calculadora de Calorías</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Calculadora de Calorías</h1>
+        <form id="caloriesForm">
+            <label for="age">Edad (años):</label>
+            <input type="number" id="age" required>
+
+            <label for="weight">Peso (kg):</label>
+            <input type="number" id="weight" required>
+
+            <label for="height">Altura (cm):</label>
+            <input type="number" id="height" required>
+
+            <label for="activityLevel">Nivel de Actividad:</label>
+            <select id="activityLevel" required>
+                <option value="1.2">Sedentario (poco o ningún ejercicio)</option>
+                <option value="1.375">Ligera actividad (ejercicio ligero/deportes 1-3 días a la semana)</option>
+                <option value="1.55">Moderada actividad (ejercicio moderado/deportes 3-5 días a la semana)</option>
+                <option value="1.725">Alta actividad (ejercicio duro/deportes 6-7 días a la semana)</option>
+                <option value="1.9">Muy alta actividad (dos veces al día, entrenamientos muy intensos)</option>
+            </select>
+
+            <button id="calcular" type="button">Calcular</button>
+
+            <div id="result"></div>
+            <div id="resultDef"></div>
+            <div id="resultSup"></div>
+
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
