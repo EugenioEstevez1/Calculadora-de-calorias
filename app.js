@@ -1,16 +1,18 @@
+const animacionImg = 'animacion-btn.gif'
 
 function displayResult(calorias) {
     const resultado = document.getElementById("result");
-    resultado.textContent = `MANTENIMIENTO: ${calorias} calorias`
-}
-
-function displayResultDef(calorias){
-    const resultadoDeficit = document.getElementById("resultDef");
-    resultadoDeficit.textContent = `DEFICIT: ${calorias} calorias`
-}
-function displayResultSup(calorias){
-    const resultadoDeficit = document.getElementById("resultSup");
-    resultadoDeficit.textContent = `SUPERAVIT: ${calorias} calorias`
+    const timer = parseInt(Math.random() * 5000)
+    boton.innerHTML = `<img src='${animacionImg}' />` 
+    setTimeout(()=>{
+        resultado.innerHTML = `<p>MANTENIMIENTO: ${calorias} calorias</p>
+        <p>DEFICIT: ${calorias - 300} calorias </p>
+        <p>SUPERAVIT: ${calorias + 300} calorias</p>`
+        boton.innerText = "Calcular"
+        
+    },timer)
+    resultado.innerHTML = ""
+ 
 }
 
 
@@ -23,8 +25,7 @@ function calcularCalorias() {
     const bmr = calcularBmr(peso, altura, edad);
     const calorias = calcularTotalCalorias(bmr, actividad)
     displayResult(calorias)
-    displayResultDef(calorias - 400)
-    displayResultSup(calorias + 400)
+
 }
 
 function calcularBmr(peso, altura, edad) {
